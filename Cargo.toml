@@ -3,6 +3,8 @@ name = "flex-algo"
 version = "0.1.0"
 authors = ["boyuan459"]
 edition = "2021"
+description = "Rust commonly used data structure and algorithms"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

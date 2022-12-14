@@ -1,9 +1,14 @@
 [package]
 name = "flex-algo"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["boyuan459"]
 edition = "2021"
 description = "Rust commonly used data structure and algorithms"
+repository = "https://github.com/boyuan459/flex-algo"
+documentation = "https://github.com/boyuan459/flex-algo"
+readme = "README.md"
+keywords = ["priority", "queue", "heap"]
+categories = ["data-structures", "algorithms"]
 license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -10,6 +10,8 @@
 
 pub use self::priority_queue::PriorityQueue;
 pub use self::dijkstra::Dijkstra;
+pub use self::graph::Graph;
 
 pub mod priority_queue;
 pub mod dijkstra;
+pub mod graph;

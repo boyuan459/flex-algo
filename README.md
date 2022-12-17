@@ -18,6 +18,8 @@ This crate implements a Dijkstra algorithm to compute the shortest path by given
 
 Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
 
+This is inspired by the javascript implementation, please reference [here](https://replit.com/@ZhangMYihua/Network-time-delay-Dijkstras-Algorithm-Solution)
+
 ### Example
 
 ```rust
@@ -43,6 +45,8 @@ Priorities are stored in a Vec and the queue is implemented as a Heap of indexes
 
 Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
 
+This is inspired by the javascript implementation, please reference [here](https://replit.com/@ZhangMYihua/priority-queue-class-implementation)
+
 ### Example
 
 ```rust
@@ -61,5 +65,29 @@ fn main() {
   pq.push(4);
   let value = pq.pop().unwrap();
   println!("pop priority queue(closure): {:?}", value);
+}
+```
+
+## Graph
+<!-- [![crate](https://crates.io/crates/flex-algo)](https://crates.io/crates/flex-algo) -->
+
+This crate implements a Graph data structure.
+
+
+Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
+
+This is inspired by the javascript implementation, please reference [BFS](https://replit.com/@ZhangMYihua/Course-schedule-naive-BFS#index.js)
+[Topological Sort](https://replit.com/@ZhangMYihua/Course-schedule-Topological-Sort-with-adjacency-list#main.js)
+[DFS](https://replit.com/@ZhangMYihua/Adjacency-List-DFS#main.js)
+### Example
+
+```rust
+use use flex_algo::Graph;
+
+fn main() {
+    let mut graph = Graph::new(6, vec![(1, 0), (2, 1), (2, 5), (0, 3), (4, 3), (3, 5), (4, 5)]);
+    println!("graph: {:?}", graph);
+    assert_eq!(graph.is_acyclic_bfs(), true);
+    assert_eq!(graph.is_acyclic_top_sort(), true);
 }
 ```

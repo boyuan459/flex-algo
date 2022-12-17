@@ -23,7 +23,7 @@ use std::fmt::Debug;
 ///
 /// This data structure implements a Priority Queue with a comparator function to specify the Min/Max heap.
 /// The queue is implemented as a heap of indexes.
-/// 
+///
 #[derive(Debug)]
 pub struct PriorityQueue<F, T>
 where

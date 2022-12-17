@@ -7,7 +7,10 @@
 //!
 //! This algorithm implements a Dijkstra algorithm to compute the shortest path by given graph.
 //!
-
+//! [Graph]
+//!
+//! This data structure implements Graph algorithm with acyclic, bfs, dfs.
+//!
 pub use self::priority_queue::PriorityQueue;
 pub use self::dijkstra::Dijkstra;
 pub use self::graph::Graph;

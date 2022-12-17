@@ -2,7 +2,7 @@
 
 To use this crate, simply add the following string to your `Cargo.toml`:
 ```
-flex-algo = "0.4.0"
+flex-algo = "0.6.0"
 ```
 
 Version numbers follow the [semver](https://semver.org/) convention.
@@ -11,12 +11,14 @@ Then use the data structure inside your Rust source code as in the following Exa
 
 Remember that, if you need serde support, you should compile using `--features serde`.
 
+# Documentation
+
+Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
+
 ## Dijkstra algorithm
 <!-- [![crate](https://crates.io/crates/flex-algo)](https://crates.io/crates/flex-algo) -->
 
 This crate implements a Dijkstra algorithm to compute the shortest path by given graph.
-
-Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
 
 This is inspired by the javascript implementation, please reference [here](https://replit.com/@ZhangMYihua/Network-time-delay-Dijkstras-Algorithm-Solution)
 
@@ -41,9 +43,6 @@ fn main() {
 
 This crate implements a Priority Queue with a function to change the priority of an object.
 Priorities are stored in a Vec and the queue is implemented as a Heap of indexes.
-
-
-Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
 
 This is inspired by the javascript implementation, please reference [here](https://replit.com/@ZhangMYihua/priority-queue-class-implementation)
 
@@ -72,9 +71,6 @@ fn main() {
 <!-- [![crate](https://crates.io/crates/flex-algo)](https://crates.io/crates/flex-algo) -->
 
 This crate implements a Graph data structure.
-
-
-Please read the [API documentation here](https://docs.rs/flex-algo/latest/flex_algo/)
 
 This is inspired by the javascript implementation, please reference [BFS](https://replit.com/@ZhangMYihua/Course-schedule-naive-BFS#index.js)
 [Topological Sort](https://replit.com/@ZhangMYihua/Course-schedule-Topological-Sort-with-adjacency-list#main.js)

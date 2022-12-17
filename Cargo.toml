@@ -1,6 +1,6 @@
 [package]
 name = "flex-algo"
-version = "0.5.0"
+version = "0.5.1"
 authors = ["boyuan459"]
 edition = "2021"
 description = "Rust commonly used data structure and algorithms"

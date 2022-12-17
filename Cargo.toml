@@ -7,7 +7,7 @@ description = "Rust commonly used data structure and algorithms"
 repository = "https://github.com/boyuan459/flex-algo"
 documentation = "https://github.com/boyuan459/flex-algo"
 readme = "README.md"
-keywords = ["priority", "queue", "heap", "graph", "dijkstra", "topological sort", "breadth first search", "depth first search"]
+keywords = ["priority", "queue", "heap", "graph", "dijkstra", "topological", "bfs", "dfs"]
 categories = ["data-structures", "algorithms"]
 license = "MIT"
 

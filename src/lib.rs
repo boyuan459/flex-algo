@@ -11,10 +11,16 @@
 //!
 //! This data structure implements Graph algorithm with acyclic, bfs, dfs.
 //!
+//! [BinaryTree]
+//! 
+//! This data structure implements BinaryTree with depth, level order, left/right side view, complete tree and count nodes.
+//! 
 pub use self::priority_queue::PriorityQueue;
 pub use self::dijkstra::Dijkstra;
 pub use self::graph::Graph;
+pub use self::binary_tree::BinaryTree;
 
 pub mod priority_queue;
 pub mod dijkstra;
 pub mod graph;
+pub mod binary_tree;

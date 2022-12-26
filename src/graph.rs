@@ -142,7 +142,7 @@ impl Graph {
         queue.push(start);
 
         while !queue.is_empty() {
-            println!("queue: {:?}", queue);
+            // println!("queue: {:?}", queue);
             let vertex = queue.pop().unwrap();
             if seens.contains(&vertex) {
                 continue;

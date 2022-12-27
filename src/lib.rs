@@ -19,8 +19,10 @@ pub use self::priority_queue::PriorityQueue;
 pub use self::dijkstra::Dijkstra;
 pub use self::graph::Graph;
 pub use self::binary_tree::BinaryTree;
+pub use self::binary_search_tree::BST;
 
 pub mod priority_queue;
 pub mod dijkstra;
 pub mod graph;
 pub mod binary_tree;
+pub mod binary_search_tree;

@@ -1,5 +1,10 @@
 use std::fmt::Debug;
 
+/// BinarySearchTree
+/// 
+/// This crate implements a Binary Search Tree data structure with insert, 
+/// preorder traversal, search and validate algorithms.
+/// 
 #[derive(Debug)]
 pub struct BST<T>(Option<Box<BinaryNode<T>>>);
 
@@ -21,6 +26,20 @@ impl<T> BinaryNode<T> {
 }
 
 impl<T> BST<T> {
+    /// Create a new BinarySearchTree
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use flex_algo::BST;
+    /// 
+    /// let mut bst = BST::new();
+    /// bst.insert(3);
+    /// bst.insert(2);
+    /// bst.insert(1);
+    /// 
+    /// ```
+    /// 
     pub fn new() -> Self {
       BST(None)
     }
@@ -29,6 +48,20 @@ impl<T> BST<T> {
 impl<T> BST<T> 
 where T: PartialOrd + Copy
 {
+    /// Insert into a new BinarySearchTree
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use flex_algo::BST;
+    /// 
+    /// let mut bst = BST::new();
+    /// bst.insert(3);
+    /// bst.insert(2);
+    /// bst.insert(1);
+    /// 
+    /// ```
+    /// 
     pub fn insert(&mut self, data: T) -> bool {
         match self.0 {
             Some(ref mut node) => {
@@ -48,6 +81,23 @@ where T: PartialOrd + Copy
         true
     }
 
+    /// Validate a new BinarySearchTree
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use flex_algo::BST;
+    /// 
+    /// let mut bst = BST::new();
+    /// bst.insert(3);
+    /// bst.insert(2);
+    /// bst.insert(1);
+    /// 
+    /// let is_valid = bst.is_valid(i32::MIN, i32::MAX);
+    /// assert_eq!(is_valid, true);
+    /// 
+    /// ```
+    /// 
     pub fn is_valid(&self, min: T, max: T) -> bool {
         if let Some(ref node) = self.0 {
             if node.data <= min || node.data >= max {
@@ -63,6 +113,26 @@ where T: PartialOrd + Copy
         true
     }
 
+    /// Search a new BinarySearchTree
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use flex_algo::BST;
+    /// 
+    /// let mut bst = BST::new();
+    /// bst.insert(3);
+    /// bst.insert(2);
+    /// bst.insert(1);
+    /// 
+    /// let none = bst.search(5);
+    /// assert_eq!(none, None);
+    /// 
+    /// let found = bst.search(2);
+    /// assert_eq!(found, Some(2));
+    /// 
+    /// ```
+    /// 
     pub fn search(&self, data: T) -> Option<T> {
         if let Some(ref node) = self.0 {
             if node.data == data {
@@ -79,6 +149,22 @@ where T: PartialOrd + Copy
 }
 
 impl<T: Debug> BST<T> {
+    /// Traversal a new BinarySearchTree preorder
+    /// 
+    /// # Example
+    /// 
+    /// ```
+    /// use flex_algo::BST;
+    /// 
+    /// let mut bst = BST::new();
+    /// bst.insert(3);
+    /// bst.insert(2);
+    /// bst.insert(1);
+    /// 
+    /// bst.print_preorder(0);
+    /// 
+    /// ```
+    /// 
     pub fn print_preorder(&self, depth: i32) {
         if let Some(ref node) = self.0 {
             node.left.print_preorder(depth + 1);

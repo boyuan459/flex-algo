@@ -3,7 +3,7 @@ This crate includes the most commonly used data structures and algorithms in Rus
 
 To use this crate, simply add the following string to your `Cargo.toml`:
 ```
-flex-algo = "0.6.0"
+flex-algo = "0.7.0"
 ```
 
 Version numbers follow the [semver](https://semver.org/) convention.
@@ -130,5 +130,36 @@ fn main() {
     tree.left_side_view(0, &mut res);
     println!("left side view: {:?}", res);
     assert_eq!(res, vec![1, 2, 4, 6]);
+}
+```
+
+## BinarySearchTree(BST)
+
+This crate implements the BinarySearchTree data structure.
+
+This is inspired by the javascript and rust implementation below:
+[JS](https://replit.com/@ZhangMYihua/Validate-Binary-Search-Tree#index.js)
+[Rust](https://github.com/PacktPublishing/Hands-On-Data-Structures-and-Algorithms-in-Rust/blob/master/code/d3-linklists/v1-ll/src/v3_bintree.rs)
+
+### Crete a binary tree
+```rust
+use flex_algo::BST;
+
+fn main() {
+    let mut bst = BST::new();
+    bst.insert(3);
+    bst.insert(2);
+    bst.insert(1);
+    
+    let is_valid = bst.is_valid(i32::MIN, i32::MAX);
+    assert_eq!(is_valid, true);
+
+    bst.print_preorder(0);
+
+    let none = bst.search(5);
+    assert_eq!(none, None);
+
+    let found = bst.search(2);
+    assert_eq!(found, Some(2));
 }
 ```

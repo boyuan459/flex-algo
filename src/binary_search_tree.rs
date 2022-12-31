@@ -27,7 +27,7 @@ impl<T> BST<T> {
 }
 
 impl<T> BST<T> 
-where T: PartialOrd
+where T: PartialOrd + Copy
 {
     pub fn insert(&mut self, data: T) -> bool {
         match self.0 {
@@ -46,6 +46,35 @@ where T: PartialOrd
             }
         }
         true
+    }
+
+    pub fn is_valid(&self, min: T, max: T) -> bool {
+        if let Some(ref node) = self.0 {
+            if node.data <= min || node.data >= max {
+                return false;
+            }
+            if !node.left.is_valid(min, node.data) {
+                return false;
+            }
+            if !node.right.is_valid(min, max) {
+                return false;
+            }
+        }
+        true
+    }
+
+    pub fn search(&self, data: T) -> Option<T> {
+        if let Some(ref node) = self.0 {
+            if node.data == data {
+                return Some(data);
+            }
+            if data < node.data {
+                return node.left.search(data);
+            } else {
+                return node.right.search(data);
+            }
+        }
+        None
     }
 }
 
@@ -74,5 +103,29 @@ mod tests {
         bst.insert(2);
         bst.insert(1);
         bst.print_preorder(0);
+    }
+
+    #[test]
+    fn test_bst_is_valid() {
+        let mut bst = BST::new();
+        bst.insert(3);
+        bst.insert(2);
+        bst.insert(1);
+        
+        let is_valid = bst.is_valid(i32::MIN, i32::MAX);
+        assert_eq!(is_valid, true);
+    }
+
+    #[test]
+    fn test_bst_search() {
+        let mut bst = BST::new();
+        bst.insert(3);
+        bst.insert(2);
+        bst.insert(1);
+        let none = bst.search(5);
+        assert_eq!(none, None);
+
+        let found = bst.search(2);
+        assert_eq!(found, Some(2));
     }
 }

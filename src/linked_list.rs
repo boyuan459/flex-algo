@@ -8,7 +8,6 @@ use std::rc::{Rc, Weak};
 pub struct LinkedNode<T> {
     data: T,
     next: Option<Rc<RefCell<LinkedNode<T>>>>,
-    prev: Option<Weak<RefCell<LinkedNode<T>>>>,
 }
 
 #[derive(Debug)]
@@ -33,11 +32,7 @@ impl<T> LinkedList<T> {
                 let new_front = Rc::new(RefCell::new(LinkedNode {
                     data,
                     next: Some(r.clone()),
-                    prev: None,
                 }));
-                // set the old front prev to the new front
-                let mut old_front = r.borrow_mut();
-                old_front.prev = Some(Rc::downgrade(&new_front)); // Rc pointer downgrade to weak
                 // set the new front as first
                 self.head = Some(new_front);
             },
@@ -46,7 +41,6 @@ impl<T> LinkedList<T> {
                 let new_node = Rc::new(RefCell::new(LinkedNode {
                     data,
                     next: None,
-                    prev: None,
                 }));
                 self.tail = Some(Rc::downgrade(&new_node));
                 self.head = Some(new_node);
@@ -61,7 +55,6 @@ impl<T> LinkedList<T> {
                 let new_last = Rc::new(RefCell::new(LinkedNode {
                     data,
                     next: None,
-                    prev: Some(r.clone()),
                 }));
                 // upgrade weak as weak cannot borrow_mut, we know r exist so can unwrap here
                 let last_rc = Weak::upgrade(&r).unwrap();
@@ -76,7 +69,6 @@ impl<T> LinkedList<T> {
                 let new_node = Rc::new(RefCell::new(LinkedNode {
                     data,
                     next: None,
-                    prev: None,
                 }));
                 self.tail = Some(Rc::downgrade(&new_node));
                 self.head = Some(new_node);

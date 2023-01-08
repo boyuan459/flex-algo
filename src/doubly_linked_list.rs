@@ -12,14 +12,14 @@ pub struct LinkedNode<T> {
 }
 
 #[derive(Debug)]
-pub struct LinkedList<T> {
+pub struct DoublyLinkedList<T> {
     head: Option<Rc<RefCell<LinkedNode<T>>>>,
     tail: Option<Weak<RefCell<LinkedNode<T>>>>,
 }
 
-impl<T> LinkedList<T> {
+impl<T> DoublyLinkedList<T> {
     pub fn new() -> Self {
-      LinkedList {
+      DoublyLinkedList {
             head: None,
             tail: None,
         }
@@ -91,7 +91,7 @@ mod tests {
 
     #[test]
     fn test_list_push() {
-        let mut dl = LinkedList::new();
+        let mut dl = DoublyLinkedList::new();
         dl.push_front(6);
         dl.push_back(5);
         dl.push_back(7);

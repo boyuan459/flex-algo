@@ -164,6 +164,26 @@ fn main() {
 }
 ```
 
+## DoublyLinkedList
+
+This crate implements the DoublyLinkedList data structure.
+
+This is inspired by the rust implementation below:
+[Rust](https://github.com/PacktPublishing/Hands-On-Data-Structures-and-Algorithms-in-Rust/blob/master/code/d3-linklists/v1-ll/src/v2_dbl.rs)
+
+### Crete a binary tree
+```rust
+use flex_algo::DoublyLinkedList;
+
+fn main() {
+    let mut dl = DoublyLinkedList::new();
+    dl.push_front(6);
+    dl.push_back(5);
+    dl.push_back(7);
+    println!("linked list: {:?}", dl);
+}
+```
+
 ## Run single test
 ```
 # demo for binary_tree

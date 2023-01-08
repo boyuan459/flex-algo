@@ -29,6 +29,7 @@ pub use self::graph::Graph;
 pub use self::binary_tree::BinaryTree;
 pub use self::binary_search_tree::BST;
 pub use self::linked_list::LinkedList;
+pub use self::doubly_linked_list::DoublyLinkedList;
 
 pub mod priority_queue;
 pub mod dijkstra;
@@ -36,3 +37,4 @@ pub mod graph;
 pub mod binary_tree;
 pub mod binary_search_tree;
 pub mod linked_list;
+pub mod doubly_linked_list;

@@ -163,3 +163,9 @@ fn main() {
     assert_eq!(found, Some(2));
 }
 ```
+
+## Run single test
+```
+# demo for binary_tree
+cargo test --package flex-algo --lib -- binary_tree::tests::test_binary_node --exact --nocapture
+```
